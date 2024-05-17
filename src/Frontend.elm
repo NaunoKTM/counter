@@ -81,8 +81,8 @@ view model =
                 , Attr.style "padding-top" "40px"
                 ]
                 [ Html.text (String.fromInt model.count) ]
-            , button [ onClick Plus1 ] [ text "+1" ]
-            , button [ onClick Minus1 ] [ text "-1" ]
+            , button [ onClick Plus1, Attr.style "background-color" (if modBy 2 model.count == 0 then "blue" else "red") ] [ text "+1" ]
+            , button [ onClick Minus1, Attr.style "background-color" (if modBy 2 model.count == 0 then "blue" else "red") ] [ text "-1" ]
             ]
         ]
     }
